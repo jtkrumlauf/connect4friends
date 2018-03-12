@@ -10,10 +10,17 @@ endif;
 
 <!DOCTYPE html>
 <html>
+<!--
+Background- Neutral: #EFEFEF
+Piece Red #FF3B3F
+Piece Carbon #A9A9A9
+Light Blue #CAEBF2
+-->
 <head>
   <title> Connect 4 Friends </title>
   <meta charset="utf-8"/>
   <link rel="stylesheet" src="css/index.css"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <style>
   * {
       box-sizing: border-box;
@@ -35,19 +42,23 @@ endif;
   /* The grid container */
   .grid-container {
     display: grid;
+    width: 60%;
+    margin: auto;
     grid-template-areas:
     'header header header header header header'
-    'left middle middle middle middle right'
+    'left middle middle middle middle middle'
   }
 
-  .left, .middle, .right {
+  .left, .middle {
     padding: 10px;
     height: 300px;
+    background-color: #EFEFEF;
   }
 
   /* Left Column */
   .left {
     grid-area: left;
+    border: 1px solid black;
   }
 
   /* Middle Column */
@@ -55,22 +66,42 @@ endif;
     grid-area: middle;
   }
 
-  /* Right Column */
-  .right {
-    grid-area: right;
+  /* Nav Bar */
+  .nav-item {
+    padding: 5px;
   }
   </style>
 </head>
 <body>
   	<form action="index.php" method="get">
       <div class="grid-container">
-        <div class="header">
-          <h2>Header</h2>
+        <div class="header" style="background-color: white">
+          <img src="assets/indexLogo.png"/>
         </div>
-        <div class="left" style="background-color:#aaa;">NAV BAR HERE</div>
-        <div class="middle" style="background-color:#bbb;">MAIN CONTENT HERE</div>
-        <div class="right" style="background-color:#ccc;">LOGIN/SIGNUP HERE</div>
+        <div class="left">
+          <nav class="navbar">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#"> Play </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"> Stats </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"> Rules </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"> Settings </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"> Shop </a>
+              </li>
+            </ul>
+        </nav>
+        </div>
+        <div class="middle"> Greetings we need content here </div>
       </div>
   	</form>
 </body>
 </html>
+
