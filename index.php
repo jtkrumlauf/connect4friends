@@ -1,3 +1,13 @@
+<?php
+session_start();
+if ($_SERVER["REQUEST_METHOD"] == "POST"):
+  $_SESSION["ID"] = $_POST["username"];
+endif;
+if (!isset($_SESSION["ID"])):
+    header("Location: http://localhost:8000/login.php");
+endif;
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,24 +59,9 @@
   .right {
     grid-area: right;
   }
-
   </style>
 </head>
 <body>
-  <?php if ($_SERVER["REQUEST_METHOD"] == "GET"): ?>
-  	 <form action="index.php" method="post">
-          <div class="form-group">
-            Username:<br>
-            <input type="text" name="username" value="">
-            <br>
-            Password:<br>
-            <input type="text" name="password" value="">
-            <br><br>
-            <button type="submit" class="btn btn-default"> Login </button>
-          </div>
-  	</form>
-  <?php endif ?>
-  <?php if($_SERVER["REQUEST_METHOD"] == "POST"): ?>
   	<form action="index.php" method="get">
       <div class="grid-container">
         <div class="header">
@@ -77,6 +72,5 @@
         <div class="right" style="background-color:#ccc;">LOGIN/SIGNUP HERE</div>
       </div>
   	</form>
-  <?php endif ?>
 </body>
 </html>
